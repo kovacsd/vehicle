@@ -7,8 +7,8 @@ services:
       - "5432:5432"
     environment:
       POSTGRES_DB: vehicledb
-      POSTGRES_USER: yourusername
-      POSTGRES_PASSWORD: yourpassword
+      POSTGRES_USER: postgresUser
+      POSTGRES_PASSWORD: postgresPassword
     volumes:
       - postgres_data:/var/lib/postgresql/data
       - ./sql_scripts:/docker-entrypoint-initdb.d
@@ -27,8 +27,8 @@ services:
       - postgres
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/vehicledb
-      SPRING_DATASOURCE_USERNAME: yourusername
-      SPRING_DATASOURCE_PASSWORD: yourpassword
+      SPRING_DATASOURCE_USERNAME: postgresUser
+      SPRING_DATASOURCE_PASSWORD: postgresPassword
     deploy:
       resources:
         limits:
@@ -44,8 +44,8 @@ services:
       - postgres
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/vehicledb
-      SPRING_DATASOURCE_USERNAME: yourusername
-      SPRING_DATASOURCE_PASSWORD: yourpassword
+      SPRING_DATASOURCE_USERNAME: postgresUser
+      SPRING_DATASOURCE_PASSWORD: postgresPassword
     deploy:
       resources:
         limits:
